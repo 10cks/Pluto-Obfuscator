@@ -27,6 +27,9 @@ You can also build this project on Windows and MacOS, or even embed it in Androi
 ### Building on Linux/Windows
 The following commands work on both Linux and Windows:
 ```shell
+sudo apt install libz3-dev
+sudo apt install ninja-build cmake python3 gcc g++
+
 cd build
 cmake -G "Ninja" -DLLVM_ENABLE_PROJECTS="clang" \
     -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD="X86" \
