@@ -24,6 +24,9 @@ You can also build this project on Windows and MacOS, or even embed it in Androi
 - MBA Obfuscation
 
 ## Usage
+
+直接运行`./build.sh`或者像下面这样手动操作：
+
 ### Building on Linux/Windows
 The following commands work on both Linux and Windows:
 ```shell
