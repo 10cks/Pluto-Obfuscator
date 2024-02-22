@@ -64,11 +64,11 @@ See [fast-check.sh](fast-check.sh) and [test/aes](test/aes/).
 We have a full test on a crypto library named libsecp256k1 from [bitcoin-core/secp256k1](https://github.com/bitcoin-core/secp256k1), to insure our passes work fine in most cases.
 
 Passed:
-- Flattening: `-O2 -mllvm -fla`
-- BogusControlFlow: `-O2 -mllvm -bcf`
-- Substitution: `-O2 -mllvm -sub`
-- GlobalsEncryption: `-O2 -mllvm -gle`
-- MBAObfuscation: `-O2 -mllvm -mba -mllvm -mba-prob=100`
+- Flattening: `-O2 -mllvm -fla` 控制流平坦化，引入一个或多个状态变量和一个大的 switch-case 语句来实现
+- BogusControlFlow: `-O2 -mllvm -bcf` 在程序中插入条件语句和跳转
+- Substitution: `-O2 -mllvm -sub` 开启指令替换
+- GlobalsEncryption: `-O2 -mllvm -gle` 全局变量加密
+- MBAObfuscation: `-O2 -mllvm -mba -mllvm -mba-prob=100`  100% 的适用情况下都会应用 MBA 混淆。这是一个混淆程度的量化表示，它告诉混淆器对所有可能的代码路径使用 MBA 混淆技术
 - FullProtection (**HIGHLY RECOMMENDED**): `-mllvm -mba -mllvm -mba-prob=100 -mllvm -fla -mllvm -gle`
 
 See [check.sh](check.sh) and [test/secp256k1](test/secp256k1/).
